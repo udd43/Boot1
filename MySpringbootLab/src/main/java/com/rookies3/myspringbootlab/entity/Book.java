@@ -1,16 +1,12 @@
 package com.rookies3.myspringbootlab.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "books")
-@Getter
-@Setter
 public class Book {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -25,6 +21,29 @@ public class Book {
     private String isbn;
 
     private Integer price;
-
     private LocalDate publishDate;
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public LocalDate getPublishDate() {
+        return publishDate;
+    }
 }
